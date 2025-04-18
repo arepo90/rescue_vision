@@ -6,7 +6,7 @@ import time
 CFG_PATH     = "net/yolo.cfg"
 WEIGHTS_PATH = "net/yolo.weights"
 LABELS_PATH  = "net/labels.names"
-CAMERA_INDEX = 2
+CAMERA_INDEX = 0
 INPUT_SIZE   = (416, 416)
 CONF_THRESH  = 0.8
 NMS_THRESH   = 0.4
@@ -31,6 +31,10 @@ model.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
 # Cámara
 cap = cv2.VideoCapture(CAMERA_INDEX)
+width = 1920
+height = 1080
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
 if not cap.isOpened():
     raise RuntimeError(f"Could not open camera index {CAMERA_INDEX}")
 
