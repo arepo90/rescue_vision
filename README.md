@@ -1,3 +1,5 @@
+> Forked project, original README:
+
 # Real-Time Object Detection with YOLO and OpenCV
 
 This project performs real-time hazmat detection using a YOLO model (Darknet format) with OpenCV's DNN module. It detects hazmats from a live camera feed, draws bounding boxes and centroids, and displays normalized coordinates and FPS.
