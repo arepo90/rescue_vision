@@ -3,8 +3,6 @@
     Robotec 2025
 """
 
-import cv2
-import numpy as np
 import socket
 import random
 import threading
