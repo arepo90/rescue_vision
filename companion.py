@@ -204,7 +204,13 @@ class RTPStreamHandler:
                 i += 1
 
             if packet:
-                stt.audio_queue.put(packet)
+                if marker == 1:
+                    stt.audio_queue.put(packet)
+                elif marker == 2:
+                    # process frame
+                    continue
+                else:
+                    print(f"[w] Invalid marker received_ {marker}")
             elif packet == 0:
                 print("[i] GUI disconnected")
                 is_active.clear()
